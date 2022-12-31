@@ -5,3 +5,5 @@ const Intern = require('./lib/Intern');
 
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+const generateTeamMembers = require('./src/page-template');
