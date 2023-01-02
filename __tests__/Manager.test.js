@@ -14,7 +14,7 @@ describe("Manager", () => {
 
 describe("getOfficeNumber", () => {
     it(`Return office number from getOfficeNumber()`, () => {
-        const newEmployee = new Employee(name, id, email, officeNumber);
+        const newEmployee = new Manager(name, id, email, officeNumber);
         expect(newEmployee.getOfficeNumber()).toBe(officeNumber);
     });
 });
@@ -22,7 +22,7 @@ describe("getOfficeNumber", () => {
 describe("getRole", () => {
     it(`Return role from getRole()`, () => {
         const role = "Manager";
-        const newEmployee = new Employee(name, id, email, officeNumber);
+        const newEmployee = new Manager(name, id, email, officeNumber);
         expect(newEmployee.getRole()).toBe(role);
     });
 });
