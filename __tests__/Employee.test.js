@@ -24,3 +24,32 @@ describe("Employee", () => {
         expect(newEmployee.email).toBe(email);
     });
 });
+
+describe("getName", () => {
+    it(`Return name from getName()`, () => {
+        const newEmployee = new Employee(name, id, email);
+        expect(newEmployee.getName()).toBe(name);
+    });
+});
+
+describe("getID", () => {
+    it(`Return id from getID()`, () => {
+        const newEmployee = new Employee(name, id, email);
+        expect(newEmployee.getID()).toBe(id);
+    });
+});
+
+describe("getEmail", () => {
+    it(`Return email from getEmail()`, () => {
+        const newEmployee = new Employee(name, id, email);
+        expect(newEmployee.getEmail()).toBe(email);
+    });
+});
+
+describe("getRole", () => {
+    it(`Return role from getRole()`, () => {
+        const role = "Employee";
+        const newEmployee = new Employee(name, id, email);
+        expect(newEmployee.getRole()).toBe(role);
+    });
+});
