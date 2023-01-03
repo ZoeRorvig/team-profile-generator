@@ -1,13 +1,11 @@
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
-const Employee = require('./lib/Employee');
 const Intern = require('./lib/Intern');
 
 const inquirer = require('inquirer');
 const fs = require('fs');
 
 const generateTeamMembers = require('./src/page-template');
-// const { listenerCount } = require('process');
 
 employeeArray = [];
 
@@ -27,7 +25,7 @@ function addEmployee() {
         if (input.addEmployee === "Engineer") {
             newEngineer();
         } else if (input.addEmployee === "Intern") {
-            return;
+            newIntern();
         } else {
             // generateHTML();
             console.log(employeeArray);
@@ -92,5 +90,37 @@ function newEngineer() {
         addEmployee();
     });
 };
+
+function newIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "internName",
+            message: `Please enter the intern's name.`,
+        },
+        {
+            type: "input",
+            name: "internID",
+            message: `Please enter the intern's employee id.`,
+        },
+        {
+            type: "email",
+            name: "internEmail",
+            message: `Please enter the intern's email.`,
+        },
+        {
+            type: "input",
+            name: "school",
+            message: `Please enter the intern's school.`,
+        }
+    ]).then(input => {
+        const newIntern = new Intern(input.internName, input.internID, input.internEmail, input.school);
+        employeeArray.push(newIntern);
+        addEmployee();
+    });
+};
+
+// TODO: HTML file creation 
+// TODO: Write to HTML
 
 init();
