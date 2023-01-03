@@ -3,7 +3,7 @@ const Manager = require("../lib/Manager");
 const name = "Zoe";
 const id = 2;
 const email = `test@email.com`;
-const officeNumber = 23;
+const officeNumber = '23';
 
 describe("Manager", () => {
     it(`Grabs office number`, () => {
