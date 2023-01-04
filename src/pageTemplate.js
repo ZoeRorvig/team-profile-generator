@@ -3,8 +3,10 @@ const htmlArray = [];
 // create the team
 const generateTeamMembers = (team) => {
 generateManager(team[0]);
+generateEngineer(team[1]);
+generateIntern(team[2]);
 console.log(htmlArray);
-return htmlArray;
+return htmlArray.join("");
 };
 
 const generateManager = (manager) => {
@@ -16,6 +18,32 @@ const generateManager = (manager) => {
   <li>ID: ${manager.id}</li>
   <li>Email: ${manager.email}</li>
   <li>Office Number: ${manager.officeNumber}</li>
+</ul>
+</article>
+`)};
+
+const generateEngineer = (engineer) => {
+  htmlArray.push(`
+<article>
+<h2>${engineer.name}</h2>
+<p>${engineer.role}</p>
+<ul>
+  <li>ID: ${engineer.id}</li>
+  <li>Email: ${engineer.email}</li>
+  <li>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
+</ul>
+</article>
+`)};
+
+const generateIntern = (intern) => {
+  htmlArray.push(`
+<article>
+<h2>${intern.name}</h2>
+<p>${intern.role}</p>
+<ul>
+  <li>ID: ${intern.id}</li>
+  <li>Email: ${intern.email}</li>
+  <li>School: ${intern.school}</li>
 </ul>
 </article>
 `)};
