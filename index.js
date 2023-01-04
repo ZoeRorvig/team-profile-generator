@@ -5,15 +5,16 @@ const Intern = require('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateTeamMembers = require('./src/page-template');
+const generateTeamMembers = require('./src/pageTemplate.js');
+const pageTemplate = require('./src/pageTemplate.js');
 
-employeeArray = [];
+team = [];
 
-function init() {
+const init = function() {
     newManager();
 };
 
-function addEmployee() {
+const addEmployee = function() {
     inquirer.prompt([
         {
             type: "list",
@@ -27,13 +28,12 @@ function addEmployee() {
         } else if (input.addEmployee === "Intern") {
             newIntern();
         } else {
-            // generateHTML();
-            console.log(employeeArray);
+            generateHTML();
         }
     })
 };
 
-function newManager() {
+const newManager = function() {
     inquirer.prompt([
         {
             type: "input",
@@ -57,12 +57,12 @@ function newManager() {
         }
     ]).then(input => {
         const newManager = new Manager(input.managerName, input.managerID, input.managerEmail, input.officeNumber);
-        employeeArray.push(newManager);
+        team.push(newManager);
         addEmployee();
     });
 };
 
-function newEngineer() {
+const newEngineer = function() {
     inquirer.prompt([
         {
             type: "input",
@@ -86,12 +86,12 @@ function newEngineer() {
         }
     ]).then(input => {
         const newEngineer = new Engineer(input.engineerName, input.engineerID, input.engineerEmail, input.github);
-        employeeArray.push(newEngineer);
+        team.push(newEngineer);
         addEmployee();
     });
 };
 
-function newIntern() {
+const newIntern = function() {
     inquirer.prompt([
         {
             type: "input",
@@ -115,12 +115,15 @@ function newIntern() {
         }
     ]).then(input => {
         const newIntern = new Intern(input.internName, input.internID, input.internEmail, input.school);
-        employeeArray.push(newIntern);
+        team.push(newIntern);
         addEmployee();
     });
 };
 
-// TODO: HTML file creation 
-// TODO: Write to HTML
+const generateHTML = function(){
+    fs.writeFile('./dist/team.html', pageTemplate(team),(err) =>
+    err ? console.error(err) : console.log(`Successfully generated page!`)
+    );
+};
 
 init();
