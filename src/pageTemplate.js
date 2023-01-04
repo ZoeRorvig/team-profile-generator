@@ -1,9 +1,24 @@
+const htmlArray = [];
+
 // create the team
 const generateTeamMembers = (team) => {
-
-
-return;
+generateManager(team[0]);
+console.log(htmlArray);
+return htmlArray;
 };
+
+const generateManager = (manager) => {
+  htmlArray.push(`
+<article>
+<h2>${manager.name}</h2>
+<p>${manager.role}</p>
+<ul>
+  <li>ID: ${manager.id}</li>
+  <li>Email: ${manager.email}</li>
+  <li>Office Number: ${manager.officeNumber}</li>
+</ul>
+</article>
+`)};
 
 // export function to generate entire page
 module.exports = (team) => {
@@ -49,7 +64,7 @@ module.exports = (team) => {
         <h1>My Team</h1>
       </header>
       <main>
- 
+        ${generateTeamMembers(team)}
       </main>
       <footer>
         &copy; 2022-2023
