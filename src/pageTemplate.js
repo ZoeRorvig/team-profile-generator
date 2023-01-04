@@ -2,10 +2,16 @@ const htmlArray = [];
 
 // create the team
 const generateTeamMembers = (team) => {
-generateManager(team[0]);
-generateEngineer(team[1]);
-generateIntern(team[2]);
-console.log(htmlArray);
+for (let i = 0; i < team.length; i++){
+  if(team[i].role === "Manager"){
+    generateManager(team[i]);
+  }else if(team[i].role === "Engineer"){
+    generateEngineer(team[i]);
+  } else{
+    generateIntern(team[i]);
+  }
+}
+
 return htmlArray.join("");
 };
 
