@@ -1,6 +1,6 @@
 const htmlArray = [];
 
-// create the team
+// Create the team
 const generateTeamMembers = (team) => {
 for (let i = 0; i < team.length; i++){
   if(team[i].role === "Manager"){
@@ -15,6 +15,7 @@ for (let i = 0; i < team.length; i++){
 return htmlArray.join("");
 };
 
+// Create the managers card
 const generateManager = (manager) => {
   htmlArray.push(`
 <article>
@@ -28,6 +29,7 @@ const generateManager = (manager) => {
 </article>
 `)};
 
+// Create the engineer card
 const generateEngineer = (engineer) => {
   htmlArray.push(`
 <article>
@@ -41,6 +43,7 @@ const generateEngineer = (engineer) => {
 </article>
 `)};
 
+// Create the intern card
 const generateIntern = (intern) => {
   htmlArray.push(`
 <article>
@@ -54,7 +57,7 @@ const generateIntern = (intern) => {
 </article>
 `)};
 
-// export function to generate entire page
+// Export function to generate entire page
 module.exports = (team) => {
 return `<!DOCTYPE html>
 <html lang="en">
@@ -63,7 +66,6 @@ return `<!DOCTYPE html>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Team Profile</title>
-  <!-- Minified version -->
   <style>
     @import "https://cdn.simplecss.org/simple.min.css";
 

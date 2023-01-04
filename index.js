@@ -7,7 +7,6 @@ const fs = require('fs');
 
 const generateTeamMembers = require('./src/page-template.js');
 
-
 team = [];
 
 const init = function () {
