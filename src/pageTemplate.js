@@ -22,7 +22,7 @@ const generateManager = (manager) => {
 <p>${manager.role}</p>
 <ul>
   <li>ID: ${manager.id}</li>
-  <li>Email: ${manager.email}</li>
+  <li>Email: <a href = "mailto: ${manager.email}">${manager.email}</a></li>
   <li>Office Number: ${manager.officeNumber}</li>
 </ul>
 </article>
@@ -35,7 +35,7 @@ const generateEngineer = (engineer) => {
 <p>${engineer.role}</p>
 <ul>
   <li>ID: ${engineer.id}</li>
-  <li>Email: ${engineer.email}</li>
+  <li>Email: <a href = "mailto: ${engineer.email}">${engineer.email}</a></li>
   <li>GitHub: <a href="https://github.com/${engineer.github}" target="_blank">${engineer.github}</a></li>
 </ul>
 </article>
@@ -48,7 +48,7 @@ const generateIntern = (intern) => {
 <p>${intern.role}</p>
 <ul>
   <li>ID: ${intern.id}</li>
-  <li>Email: ${intern.email}</li>
+  <li>Email: <a href = "mailto: ${intern.email}">${intern.email}</a></li>
   <li>School: ${intern.school}</li>
 </ul>
 </article>
