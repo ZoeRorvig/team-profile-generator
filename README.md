@@ -1,12 +1,10 @@
 # Team Profile Generator
 
-![badge](https://img.shields.io/badge/License-MIT-yellow.svg)
-
 ## Table of Contents
 - [Description](#description)
 - [Instructions](#instructions)
-- [License](#license)
 - [Visuals](#visuals)
+- [Tests](#tests)
 
 ## Description 
 This application produces an HTML file containing a basic profile for your team.
@@ -26,9 +24,6 @@ Features Include:
 - Follow the prompts to enter information.
 - Select "Finished Building my Team" to close out of the prompts and generate the HTML file. 
 
-## License
-To get more information for this license, please see [MIT](https://opensource.org/licenses/MIT)!
-
 ## Visuals 
 
 The following is a link to a video demonstration of the program:
@@ -38,3 +33,6 @@ The following is a link to a video demonstration of the program:
 The following is a screenshot of an example team profile:
 
 ![screenshot](./images/example-profile.png)
+
+## Tests
+Run "npm test" in the command terminal to run Employee.test.js, Engineer.test.js, Intern.test.js, and Manager.test.js.
